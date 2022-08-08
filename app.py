@@ -31,6 +31,7 @@ def upload_image():
         file_data = rgb_effet(decode_array_to_img)
     elif(operation_selection == 'water'):
         file_data = water(decode_array_to_img)
+        print(file_data)
     elif(operation_selection == 'invert'):
         file_data = invert(decode_array_to_img)
     elif(operation_selection == 'hdr'):
@@ -79,6 +80,7 @@ def rgb_effet(decode_array_to_img):
     return output_img
 
 def water(decode_array_to_img):
+    print('water')
     water_effect= cv2.stylization(decode_array_to_img,sigma_s=60,sigma_r= 0.6)
     status, output_img = cv2.imencode('.PNG', water_effect)
 
